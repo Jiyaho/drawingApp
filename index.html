@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Meme Maker</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="color-options">
+            <input id="color" type="color" />
+            <div class="color-option" style="background-color:#55efc4;" data-color="#55efc4"></div>
+            <div class="color-option" style="background-color:#81ecec;" data-color="#81ecec"></div>
+            <div class="color-option" style="background-color:#00cec9;" data-color="#00cec9"></div>
+            <div class="color-option" style="background-color:#74b9ff;" data-color="#74b9ff"></div>
+            <div class="color-option" style="background-color:#0984e3;" data-color="#0984e3"></div>
+            <div class="color-option" style="background-color:#a29bfe;" data-color="#a29bfe"></div>
+            <div class="color-option" style="background-color:#6c5ce7;" data-color="#6c5ce7"></div>
+            <div class="color-option" style="background-color:#fdcb6e;" data-color="#fdcb6e"></div>
+            <div class="color-option" style="background-color:#fab1a0;" data-color="#fab1a0"></div>
+            <div class="color-option" style="background-color:#e17055;" data-color="#e17055"></div>
+            <div class="color-option" style="background-color:#fd79a8;" data-color="#fd79a8"></div>
+            <div class="color-option" style="background-color:#e84393;" data-color="#e84393"></div>
+            <div class="color-option" style="background-color:#dfe6e9;" data-color="#dfe6e9"></div>
+            <div class="color-option" style="background-color:#2d3436;" data-color="#2d3436"></div>
+            <!-- html에서 "data-attribute" 형식을 통해 데이터를 넣어주고, JS에서 사용할 수 있다.
+                여기서는 data-color로 color 값을 넣어주었음 -->
+        </div>
+        <canvas></canvas>
+        <div class="btns">
+            <span>🖍 Brush Width</span>
+            <input id="line-width" type="range" min="1" max="10" value="5" step="0.5" />
+            <!-- min: 최소, max: 최대, value: 기본값, step: 값을 조정하는 단위 -->
+            <div class="do-btns">
+                <button id="undo-btn">⬅️ Undo</button>
+                <button id="redo-btn">Redo ➡️</button>
+            </div>
+            <div class="text-box-container">
+                <input id="text-box" type="text" placeholder="📝 Add text here" />
+                <select id="text-size">
+                    <option value='12'>12</option>
+                    <option value='15'>15</option>
+                    <option value='18'>18</option>
+                    <option value='21'>21</option>
+                    <option value='24'>24</option>
+                    <option value='27'>27</option>
+                    <option value='30'>30</option>
+                    <option value='33'>33</option>
+                    <option value='36'>36</option>
+                    <option value='39'>39</option>
+                    <option value='42'>42</option>
+                    <option value='45'>45</option>
+                    <option value='48'>48</option>
+                    <option value='51'>51</option>
+                    <option value='54'>54</option>
+                    <option value='57'>57</option>
+                    <option value='60'>60</option>
+                    <option value='63'>63</option>
+                    <option value='66'>66</option>
+                    <option value='69'>69</option>
+                    <option value='71'>71</option>
+                    <option value='74'>74</option>
+                    <option value='77'>77</option>
+                </select> 
+            </div>
+            <button id="mode-btn">🩸 Fill</button>
+            <button id="destroy-btn">❌ Destroy</button>
+            <button id="eraser-btn">🫥 Erase</button>
+            <label for="file" class="add-photo">
+                🏞 Add Photo
+                <input id="file" type="file" accept="image/*" />
+            </label>
+            <!-- file을 첨부할 수 있는 input 생성: 첨부 가능 파일은 image 형식의 파일만 accept하는 코드,
+                <label>은 for="input의 id"를 넣어주면 해당 버튼의 스타일을 꾸밀 수 있음
+                -> css.style에서 input#file의 display:none으로 하고 label에 원하는 style 적용할 것-->
+            <button id="save">💾 Save image</button>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
